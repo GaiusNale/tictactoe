@@ -27,3 +27,11 @@ screen = pg.display.set_mode((WIDTH, HEIGHT))
 pg.display.set_caption("Tic-Tac-Toe AI") 
 screen.fill(BLACK)
 
+board = np.zeros((BOARD_ROWS, BOARD_COLUMNS))
+
+
+def draw_line(color= WHITE):
+    for i in range(1, BOARD_COLUMNS):
+        pg.draw.line(screen, color, start_pos: (0, SQUARE_SIZE * i), end_pos: (WIDTH, SQUARE_SIZE * i),) 
+        pg.draw.line(screen, color, start_pos: (SQUARE_SIZE * i), 0, end_pos: ( SQUARE_SIZE * i, HEIGHT)) 
+
