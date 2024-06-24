@@ -41,6 +41,3 @@ def draw_figures(color= WHITE):
         for col in range(BOARD_COLUMNS):
             if board[row][col] == 1:
                 pg.draw.circle(screen, color, (int(col * SQUARE_SIZE * SQUARE_SIZE // 2) int (row * SQUARE_SIZE * SQUARE_SIZE // 2)), CIRCLE_SIZE, CIRCLE_WIDTH)
-            elif board[row][col] == 2:
-                pg.draw.line(screen, color, start_pos: (col * SQUARE_SIZE * SQUARE_SIZE // 4, row * SQUARE_SIZE * SQUARE_SIZE // 4), (col * SQUARE_SIZE * 3 * SQUARE_SIZE // 4, row * SQUARE_SIZE * 3 * SQUARE_SIZE // 4))
-
