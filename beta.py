@@ -1,5 +1,5 @@
 import sys
-import pygame
+import pygame as pg
 import numpy as np
 
 pygame.init()
@@ -22,4 +22,8 @@ CIRCLE_SIZE = SQUARE_SIZE//3
 CIRCLE_WIDTH = 15
 CROSS_WIDTH =  25
 
+# Initiazlizing the game window
+screen = pg.display.set_mode((WIDTH, HEIGHT))
+pg.display.set_caption("Tic-Tac-Toe AI") 
+screen.fill(BLACK)
 
