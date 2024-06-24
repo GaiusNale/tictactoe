@@ -44,5 +44,3 @@ def draw_figures(color= WHITE):
             elif board[row][col] == 2:
                 pg.draw.line(screen, color, start_pos: (col * SQUARE_SIZE * SQUARE_SIZE // 4, row * SQUARE_SIZE * SQUARE_SIZE // 4), (col * SQUARE_SIZE * 3 * SQUARE_SIZE // 4, row * SQUARE_SIZE * 3 * SQUARE_SIZE // 4))
 
-def mark_squares(color = WHITE):
-    board[row][col] = player
