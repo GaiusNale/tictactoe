@@ -57,3 +57,15 @@ def is_board_full(check_board=board):
                 return True
     return False
 
+def check_win(player, check_board=board):
+    for col in range (BOARD_COLUMNS):
+        if check_board[0][col] == player and check_board[1][col] == player and check_board[2][col] == player:
+            return True
+        
+    for row in range (BOARD_ROWS):
+        if check_board[row][0] == player and check_board[row][1] == player and check_board[row][2] == player:
+            return True
+        
+    if check_board[0][0] == player and check_board[1][1] and check_board[2][2] == player:
+        return True
+    
