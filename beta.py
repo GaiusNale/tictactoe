@@ -79,4 +79,17 @@ def minimax(minimax_board, depth, is_maximizing):
     if check_win (1, minimax_board):
         return float('-inf')
     elif is_board_full(minimax_board):
-        return 0     
+        return
+    
+    if is_maximizing:
+        best_score = 1000
+        for row in range(BOARD_ROWS):
+            for col in range(BOARD_COLUMNS):
+                if minimax_board[row][col] == 0:
+                    minimax_board[row][col] = 2
+                    score = minimax(minimax_board, depth + 1, False)
+                    minimax_board[row][col] = 0
+                    best_score = max(score, best_score)
+        return best_score
+    else:
+        pass
