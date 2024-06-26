@@ -32,6 +32,9 @@ board = np.zeros((BOARD_ROWS, BOARD_COLUMNS))
 
 def draw_lines(color= WHITE):
     for i in range(1, BOARD_ROWS):
+        pg.draw.line(screen, color, (0, SQUARE_SIZE *i), (WIDTH, SQUARE_SIZE * i))
+        pg.draw.line(screen, color, (SQUARE_SIZE *i, 0), (SQUARE_SIZE * i, HEIGHT))
+
         
 
 
