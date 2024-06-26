@@ -47,3 +47,7 @@ def draw_figures(color=WHITE):
 def mark_square(row, col, player):
     board[row][col] = player 
 
+def available_square(row, col):
+    return board[row][col] == 0
+
+k
