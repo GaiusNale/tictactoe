@@ -78,4 +78,5 @@ def minimax(minimax_board, depth, is_maximizing):
         return float('inf')
     if check_win (1, minimax_board):
         return float('-inf')
-    
+    elif is_board_full(minimax_board):
+        return 0     
