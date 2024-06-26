@@ -68,4 +68,8 @@ def check_win(player, check_board=board):
         
     if check_board[0][0] == player and check_board[1][1] and check_board[2][2] == player:
         return True
+    if check_board[0][2] == player and check_board[1][1] and check_board[2][0] == player:
+        return True
+    
+    return False
     
