@@ -50,4 +50,10 @@ def mark_square(row, col, player):
 def available_square(row, col):
     return board[row][col] == 0
 
-k
+def is_board_full(check_board=board):
+    for row in range(BOARD_ROWS):
+        for col in range(BOARD_COLUMNS):
+            if check_board[row][col] == 0:
+                return True
+    return False
+
