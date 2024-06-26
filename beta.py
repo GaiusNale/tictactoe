@@ -72,4 +72,10 @@ def check_win(player, check_board=board):
         return True
     
     return False
+
+def minimax(minimax_board, depth, is_maximizing):
+    if check_win (2, minimax_board):
+        return float('inf')
+    if check_win (1, minimax_board):
+        return float('-inf')
     
