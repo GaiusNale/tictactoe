@@ -107,4 +107,10 @@ def best_move():
     move = (-1, -1)
     for row in range(BOARD_ROWS):
         for col in range(BOARD_COLUMNS):
-            
+            if board[row][col] == 0:
+                board[row][col] = 2
+                score = minimax(board, 0, False)
+                board[row][col] = 0 
+                if score > best_score:
+                    best_score = score
+                    move = (row, col)
