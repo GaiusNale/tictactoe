@@ -74,15 +74,15 @@ def check_win(player, check_board=board):
     return False
 
 def minimax(minimax_board, depth, is_maximizing):
-    if check_win (2, minimax_board):
+    if check_win(2, minimax_board):
         return float('inf')
-    if check_win (1, minimax_board):
+    if check_win(1, minimax_board):
         return float('-inf')
     elif is_board_full(minimax_board):
         return 0
     
     if is_maximizing:
-        best_score = 1000
+        best_score = -1000
         for row in range(BOARD_ROWS):
             for col in range(BOARD_COLUMNS):
                 if minimax_board[row][col] == 0:
@@ -101,6 +101,7 @@ def minimax(minimax_board, depth, is_maximizing):
                     minimax_board[row][col] = 0
                     best_score = min(score, best_score)
         return best_score
+
     
 def best_move():
     best_score = -1000
