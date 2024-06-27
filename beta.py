@@ -146,3 +146,11 @@ while True:
                 if check_win(player):
                     game_over = True
                 player = player % 2 + 1
+
+                if not game_over:
+                    if best_move():
+                        if check_win(2):
+                            game_over = True
+                        player = player % 2 + 1
+
+                 
