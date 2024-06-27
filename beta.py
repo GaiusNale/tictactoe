@@ -137,4 +137,8 @@ while True:
         if event.type == pg.QUIT:
             sys.exit()
 
-        if 
+        if event.type == pg.MOUSEBUTTONDOWN and not game_over:
+            mouseX = event.pos[0] // SQUARE_SIZE
+            mouseY = event.pos[1] // SQUARE_SIZE
+
+            if available_square(mouseY, mouseX)
