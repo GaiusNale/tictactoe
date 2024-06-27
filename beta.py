@@ -159,5 +159,9 @@ while True:
 
         if event.type == pg.KEYDOWN:
             if event.key == pg.K_r:
-                 restart_game()
+                restart_game()
+                game_over = False
+                player = 1
+
+            
                  
