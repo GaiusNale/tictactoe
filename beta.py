@@ -132,3 +132,9 @@ draw_lines()
 player = 1
 game_over = False
 
+while True:
+    for event in pg.event.get():
+        if event.type == pg.QUIT:
+            sys.exit()
+
+        if 
