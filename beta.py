@@ -124,4 +124,5 @@ def restart_game():
     screen.fill(BLACK)
     draw_lines()
     for row in range(BOARD_ROWS):
-        
+        for col in range(BOARD_COLUMNS):
+            board[row][col] = 0
