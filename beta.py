@@ -126,3 +126,9 @@ def restart_game():
     for row in range(BOARD_ROWS):
         for col in range(BOARD_COLUMNS):
             board[row][col] = 0
+
+draw_lines()
+
+player = 1
+game_over = False
+
