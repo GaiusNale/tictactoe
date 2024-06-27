@@ -153,4 +153,11 @@ while True:
                             game_over = True
                         player = player % 2 + 1
 
+                if not game_over:
+                    if is_board_full():
+                        game_over = True
+
+        if event.type == pg.KEYDOWN:
+            if event.key == pg.K_r:
+                 restart_game()
                  
