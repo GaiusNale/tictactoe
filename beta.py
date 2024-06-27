@@ -141,4 +141,8 @@ while True:
             mouseX = event.pos[0] // SQUARE_SIZE
             mouseY = event.pos[1] // SQUARE_SIZE
 
-            if available_square(mouseY, mouseX)
+            if available_square(mouseY, mouseX):
+                mark_square(mouseY, mouseX, player)
+                if check_win(player):
+                    game_over = True
+                player = player % 2 + 1
