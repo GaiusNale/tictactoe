@@ -22,6 +22,11 @@ CIRCLE_RADIUS = SQUARE_SIZE//3
 CIRCLE_WIDTH = 15
 CROSS_WIDTH =  25
 
+# Minimax constants
+WIN_SCORE = float("+inf")
+LOSE_SCORE = float("-inf")
+DRAW_SCORE = 0
+
 # Initiazlizing the game window
 screen = pg.display.set_mode((WIDTH, HEIGHT))
 pg.display.set_caption("Tic-Tac-Toe AI") 
@@ -34,9 +39,7 @@ board = np.zeros((BOARD_ROWS, BOARD_COLUMNS))
 def draw_lines(color= WHITE):
     """
     Draws lines on the screen.
-    
-    Parameters:
-        color (tuple): The color of the lines. Default is WHITE.
+
     """
     for i in range(1, BOARD_ROWS):
         pg.draw.line(screen, color, (0, SQUARE_SIZE *i), (WIDTH, SQUARE_SIZE * i), LINE_WIDTH)
@@ -46,9 +49,6 @@ def draw_lines(color= WHITE):
 def draw_figures(color=WHITE):
     """
     Draws circles and crosses on the screen.
-    
-    Parameters:
-        color (tuple): The color of the circles and crosses. Default is WHITE.
     """
     for row in range(BOARD_ROWS):
         for col in range (BOARD_COLUMNS):
@@ -89,11 +89,11 @@ def check_win(player, check_board=board):
 
 def minimax(minimax_board, depth, is_maximizing):
     if check_win(2, minimax_board):
-        return float('inf')
+        return WIN_SCORE
     if check_win(1, minimax_board):
-        return float('-inf')
+        return LOSE_SCORE
     elif is_board_full(minimax_board):
-        return 0
+        return DRAW_SCORE
     
     if is_maximizing:
         best_score = -1000
