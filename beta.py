@@ -41,8 +41,8 @@ def draw_figures(color=WHITE):
             if board[row][col] == 1:
                 pg.draw.circle(screen, color, (int(col * SQUARE_SIZE + SQUARE_SIZE // 2), int(row * SQUARE_SIZE + SQUARE_SIZE // 2)), CIRCLE_RADIUS, CIRCLE_WIDTH)
             elif board[row][col] == 2:
-                pg.draw.line(screen, color, (col * SQUARE_SIZE + SQUARE_SIZE // 4  , row * SQUARE_SIZE + SQUARE_SIZE // 4), (col * SQUARE_SIZE + 3 * SQUARE_SIZE // 4, row * SQUARE_SIZE + 3 * SQUARE_SIZE // 4))
-                pg.draw.line(screen, color, (col * SQUARE_SIZE + SQUARE_SIZE // 4, row * SQUARE_SIZE + 3 * SQUARE_SIZE // 4), (col * SQUARE_SIZE + 3 * SQUARE_SIZE // 4, row * SQUARE_SIZE + SQUARE_SIZE // 4))
+                pg.draw.line(screen, color, (col * SQUARE_SIZE + SQUARE_SIZE // 4  , row * SQUARE_SIZE + SQUARE_SIZE // 4), (col * SQUARE_SIZE + 3 * SQUARE_SIZE // 4, row * SQUARE_SIZE + 3 * SQUARE_SIZE // 4), CROSS_WIDTH)
+                pg.draw.line(screen, color, (col * SQUARE_SIZE + SQUARE_SIZE // 4, row * SQUARE_SIZE + 3 * SQUARE_SIZE // 4), (col * SQUARE_SIZE + 3 * SQUARE_SIZE // 4, row * SQUARE_SIZE + SQUARE_SIZE // 4), CROSS_WIDTH )
 
 def mark_square(row, col, player):
     board[row][col] = player 
@@ -54,8 +54,8 @@ def is_board_full(check_board=board):
     for row in range(BOARD_ROWS):
         for col in range(BOARD_COLUMNS):
             if check_board[row][col] == 0:
-                return True
-    return False
+                return False
+    return True
 
 def check_win(player, check_board=board):
     for col in range (BOARD_COLUMNS):
@@ -66,9 +66,9 @@ def check_win(player, check_board=board):
         if check_board[row][0] == player and check_board[row][1] == player and check_board[row][2] == player:
             return True
         
-    if check_board[0][0] == player and check_board[1][1] and check_board[2][2] == player:
+    if check_board[0][0] == player and check_board[1][1] == player and check_board[2][2] == player:
         return True
-    if check_board[0][2] == player and check_board[1][1] and check_board[2][0] == player:
+    if check_board[0][2] == player and check_board[1][1] == player and check_board[2][0] == player:
         return True
     
     return False
@@ -79,7 +79,7 @@ def minimax(minimax_board, depth, is_maximizing):
     if check_win (1, minimax_board):
         return float('-inf')
     elif is_board_full(minimax_board):
-        return
+        return 0
     
     if is_maximizing:
         best_score = 1000
@@ -172,4 +172,8 @@ while True:
         elif check_win(2):
             draw_figures(RED)
             draw_lines(RED)
-                 
+        else:
+            draw_figures(GRAY)
+            draw_lines(GRAY)
+
+    pg.display.update()
