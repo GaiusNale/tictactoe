@@ -114,3 +114,8 @@ def best_move():
                 if score > best_score:
                     best_score = score
                     move = (row, col)
+    
+    if move != (-1, -1):
+        mark_square(move[0], move[1], 2)
+        return True
+    return False
