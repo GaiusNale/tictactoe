@@ -163,5 +163,13 @@ while True:
                 game_over = False
                 player = 1
 
-            
+    if not game_over:
+        draw_figures()
+    else:
+        if check_win(1):
+            draw_figures(GREEN)
+            draw_lines(GREEN)
+        elif check_win(2):
+            draw_figures(RED)
+            draw_lines(RED)
                  
