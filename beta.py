@@ -119,3 +119,9 @@ def best_move():
         mark_square(move[0], move[1], 2)
         return True
     return False
+
+def restart_game():
+    screen.fill(BLACK)
+    draw_lines()
+    for row in range(BOARD_ROWS):
+        
