@@ -37,25 +37,21 @@ board = np.zeros((BOARD_ROWS, BOARD_COLUMNS))
 
 # Function to draw lines on the screen
 def draw_lines(color= WHITE):
-    """
-    Draws lines on the screen.
-
-    """
     for i in range(1, BOARD_ROWS):
         pg.draw.line(screen, color, (0, SQUARE_SIZE *i), (WIDTH, SQUARE_SIZE * i), LINE_WIDTH)
         pg.draw.line(screen, color, (SQUARE_SIZE *i, 0), (SQUARE_SIZE * i, HEIGHT), LINE_WIDTH)
 
-# Function to draw circles and crosses on the screen
 def draw_figures(color=WHITE):
-    """
-    Draws circles and crosses on the screen.
-    """
     for row in range(BOARD_ROWS):
         for col in range (BOARD_COLUMNS):
             if board[row][col] == 1:
                 pg.draw.circle(screen, color, (int(col * SQUARE_SIZE + SQUARE_SIZE // 2), int(row * SQUARE_SIZE + SQUARE_SIZE // 2)), CIRCLE_RADIUS, CIRCLE_WIDTH)
             elif board[row][col] == 2:
-                pg.draw.line(screen, color, (col * SQUARE_SIZE + SQUARE_SIZE // 4  , row * SQUARE_SIZE + SQUARE_SIZE // 4), (col * SQUARE_SIZE + 3 * SQUARE_SIZE // 4, row * SQUARE_SIZE + 3 * SQUARE_SIZE // 4), CROSS_WIDTH)
+                pg.draw.line(screen, color, (col * SQUARE_SIZE + SQUARE_SIZE // 4, row * SQUARE_SIZE + SQUARE_SIZE // 4), 
+                             (col * SQUARE_SIZE + 3 * SQUARE_SIZE // 4, row * SQUARE_SIZE + 3 * SQUARE_SIZE // 4), CROSS_WIDTH)
+                pg.draw.line(screen, color, (col * SQUARE_SIZE + SQUARE_SIZE // 4, row * SQUARE_SIZE + 3 * SQUARE_SIZE // 4), 
+                             (col * SQUARE_SIZE + 3 * SQUARE_SIZE // 4, row * SQUARE_SIZE + SQUARE_SIZE // 4), CROSS_WIDTH)
+
 
 # Function to mark squares on the board
 def mark_square(row, col, player):
