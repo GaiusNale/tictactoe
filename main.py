@@ -120,7 +120,7 @@ def minimax(minimax_board, depth, is_maximizing):
                     best_score = min(score, best_score)
         return best_score
 
-#     
+# Function to find the best move for the computer
 def best_move():
     best_score = -1000
     move = (-1, -1)
@@ -139,6 +139,7 @@ def best_move():
         return True
     return False
 
+# Function to restart the game and clear the board. Press 'R' 
 def restart_game():
     screen.fill(BLACK)
     draw_lines()
@@ -151,6 +152,7 @@ draw_lines()
 player = 1
 game_over = False
 
+# main game loop
 while True:
     for event in pg.event.get():
         if event.type == pg.QUIT:
