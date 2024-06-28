@@ -73,6 +73,7 @@ def is_board_full(check_board=board):
                 return False
     return True
 
+# Function to check if a player or the computer has won 1 serving as the human and 2 as the computer
 def check_win(player, check_board=board):
     for col in range (BOARD_COLUMNS):
         if check_board[0][col] == player and check_board[1][col] == player and check_board[2][col] == player:
@@ -89,6 +90,7 @@ def check_win(player, check_board=board):
     
     return False
 
+# Function that contains the logic the computer uses to make a move
 def minimax(minimax_board, depth, is_maximizing):
     if check_win(2, minimax_board):
         return WIN_SCORE
@@ -118,7 +120,7 @@ def minimax(minimax_board, depth, is_maximizing):
                     best_score = min(score, best_score)
         return best_score
 
-    
+#     
 def best_move():
     best_score = -1000
     move = (-1, -1)
