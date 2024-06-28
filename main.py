@@ -56,14 +56,16 @@ def draw_figures(color=WHITE):
                 pg.draw.circle(screen, color, (int(col * SQUARE_SIZE + SQUARE_SIZE // 2), int(row * SQUARE_SIZE + SQUARE_SIZE // 2)), CIRCLE_RADIUS, CIRCLE_WIDTH)
             elif board[row][col] == 2:
                 pg.draw.line(screen, color, (col * SQUARE_SIZE + SQUARE_SIZE // 4  , row * SQUARE_SIZE + SQUARE_SIZE // 4), (col * SQUARE_SIZE + 3 * SQUARE_SIZE // 4, row * SQUARE_SIZE + 3 * SQUARE_SIZE // 4), CROSS_WIDTH)
-                pg.draw.line(screen, color, (col * SQUARE_SIZE + SQUARE_SIZE // 4, row * SQUARE_SIZE + 3 * SQUARE_SIZE // 4), (col * SQUARE_SIZE + 3 * SQUARE_SIZE // 4, row * SQUARE_SIZE + SQUARE_SIZE // 4), CROSS_WIDTH )
 
+# Function to mark squares on the board
 def mark_square(row, col, player):
     board[row][col] = player 
 
+# Function to check if a square is available
 def available_square(row, col):
     return board[row][col] == 0
 
+# Function to check if the board is full
 def is_board_full(check_board=board):
     for row in range(BOARD_ROWS):
         for col in range(BOARD_COLUMNS):
