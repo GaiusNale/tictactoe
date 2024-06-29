@@ -22,13 +22,13 @@ CIRCLE_RADIUS = SQUARE_SIZE//3
 CIRCLE_WIDTH = 15
 CROSS_WIDTH =  25
 
-# Minimax constants
+# Minimax constants can be changed to make the computer prioritise winning and losing
 WIN_SCORE = float("+inf")
 LOSE_SCORE = float("-inf")
 DRAW_SCORE = 0
 
 # Initiazlizing the game window
-screen = pg.display.set_mode((WIDTH, HEIGHT))
+screen = pg.display.set_mode((WIDTH, HEIGHT)) 
 pg.display.set_caption("Tic-Tac-Toe AI") 
 screen.fill(BLACK)
 
