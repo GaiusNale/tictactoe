@@ -41,6 +41,7 @@ def draw_lines(color= WHITE):
         pg.draw.line(screen, color, (0, SQUARE_SIZE *i), (WIDTH, SQUARE_SIZE * i), LINE_WIDTH)
         pg.draw.line(screen, color, (SQUARE_SIZE *i, 0), (SQUARE_SIZE * i, HEIGHT), LINE_WIDTH)
 
+# this draws the circles and crosses
 def draw_figures(color=WHITE):
     for row in range(BOARD_ROWS):
         for col in range (BOARD_COLUMNS):
