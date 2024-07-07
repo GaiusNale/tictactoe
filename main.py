@@ -23,8 +23,8 @@ CIRCLE_WIDTH = 15
 CROSS_WIDTH =  25
 
 # Minimax constants can be changed to make the computer prioritise winning and losing
-WIN_SCORE = float("+inf")
-LOSE_SCORE = float("-inf")
+WIN_SCORE = float(100.0)
+LOSE_SCORE = float(-100.0)
 DRAW_SCORE = 0
 
 # Initiazlizing the game window
