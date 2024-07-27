@@ -1,3 +1,4 @@
+# This is the first script and i forgot i had commented this out 
 import random
 board = [
     [' ', ' ', ' '],
