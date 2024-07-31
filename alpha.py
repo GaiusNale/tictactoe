@@ -6,6 +6,7 @@ board = [
     [' ', ' ', ' ']
 ]
 
+# this is a simple board in terminal
 def display_board():
     for row in board:
         print ('|'.join(row))
