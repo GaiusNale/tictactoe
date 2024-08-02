@@ -11,7 +11,7 @@ def display_board():
     for row in board:
         print ('|'.join(row))
         print ('-' * 5)
-
+# this picks a random spot to move on the board 
 def computer_move():
     while True:
         row = random.randint(0, 2)
